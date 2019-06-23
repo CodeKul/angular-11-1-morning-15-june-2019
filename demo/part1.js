@@ -2,7 +2,7 @@
 console.log(`Any thing would printed in browser logger`)
 
 console.log(console)
-console.table({ nm :'codekul', batch : 'angular'})
+console.table({ nm: 'codekul', batch: 'angular' })
 
 console.log(document)
 
@@ -15,5 +15,12 @@ console.log(document)
 // console.log(ipAny)
 
 function myBindData(data, dvRef) {
-    dvRef.innerHTML = '<h1>'+ data +'</h1>'
+    dvRef.innerHTML = '<h1>' + data + '</h1>'
 }
+
+
+var part1 = (function () {
+    return {
+        nm : 10
+    }
+})()
