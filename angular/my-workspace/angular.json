@@ -26,7 +26,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -376,6 +380,120 @@
           }
         }
       }
-    }},
+    },
+    "bootstrap-pricing": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/bootstrap-pricing",
+      "sourceRoot": "projects/bootstrap-pricing/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/bootstrap-pricing",
+            "index": "projects/bootstrap-pricing/src/index.html",
+            "main": "projects/bootstrap-pricing/src/main.ts",
+            "polyfills": "projects/bootstrap-pricing/src/polyfills.ts",
+            "tsConfig": "projects/bootstrap-pricing/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/bootstrap-pricing/src/favicon.ico",
+              "projects/bootstrap-pricing/src/assets"
+            ],
+            "styles": [
+              "projects/bootstrap-pricing/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/bootstrap-pricing/src/environments/environment.ts",
+                  "with": "projects/bootstrap-pricing/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "bootstrap-pricing:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "bootstrap-pricing:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "bootstrap-pricing:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/bootstrap-pricing/src/test.ts",
+            "polyfills": "projects/bootstrap-pricing/src/polyfills.ts",
+            "tsConfig": "projects/bootstrap-pricing/tsconfig.spec.json",
+            "karmaConfig": "projects/bootstrap-pricing/karma.conf.js",
+            "assets": [
+              "projects/bootstrap-pricing/src/favicon.ico",
+              "projects/bootstrap-pricing/src/assets"
+            ],
+            "styles": [
+              "projects/bootstrap-pricing/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/bootstrap-pricing/tsconfig.app.json",
+              "projects/bootstrap-pricing/tsconfig.spec.json",
+              "projects/bootstrap-pricing/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/bootstrap-pricing/e2e/protractor.conf.js",
+            "devServerTarget": "bootstrap-pricing:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "bootstrap-pricing:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "my-workspace"
 }
