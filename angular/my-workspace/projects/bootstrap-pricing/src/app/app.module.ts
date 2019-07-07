@@ -8,6 +8,7 @@ import { CardContainerComponent } from './card-container/card-container.componen
 import { FooterContainerComponent } from './footer-container/footer-container.component';
 import { OneCardComponent } from './card-container/one-card/one-card.component';
 import { OneFooterComponent } from './footer-container/one-footer/one-footer.component';
+import { LittleCompComponent } from './card-container/little-comp.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { OneFooterComponent } from './footer-container/one-footer/one-footer.com
     CardContainerComponent,
     FooterContainerComponent,
     OneCardComponent,
-    OneFooterComponent
+    OneFooterComponent,
+    LittleCompComponent
   ],
   imports: [
     BrowserModule
