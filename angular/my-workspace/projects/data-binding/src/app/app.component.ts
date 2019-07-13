@@ -1,3 +1,4 @@
+import { CstEv } from './cst-al/cst-ev';
 import { Component } from '@angular/core';
 
 @Component({
@@ -31,5 +32,9 @@ export class AppComponent {
     let b = Math.floor(Math.random() * 256)
 
     return `rgb(${r},${g},${b})`
+  }
+
+  onChangeAlertState(st : CstEv) {
+    console.log(`In AppComponent ${st}`)
   }
 }
