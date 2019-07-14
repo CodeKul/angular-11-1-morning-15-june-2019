@@ -32,8 +32,14 @@
     <div class="col-md-6" [style.width]="'300px'" [style.background-color]="rnCl"></div>
   </div>
   <div class="row">
-    <div class="col-md-12">
-      <app-cst-al [txt]="'we are the best in programming'" (alev)="onChangeAlertState($event)"></app-cst-al>
+    <div class="col-md-6">
+      <app-cst-al 
+        [txt]="'we are the best in programming'" 
+        (alev)="parentVariable = $event">
+      </app-cst-al>
+    </div>
+    <div class="col-md-6">
+      <app-bg-al [st]="parentVariable"></app-bg-al>
     </div>
   </div>
 </div>

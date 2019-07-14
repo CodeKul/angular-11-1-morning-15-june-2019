@@ -11,6 +11,7 @@ export class AppComponent {
   type = 'button'
   isInf = false
   rnCl: string = 'rgb(255,0,0)'
+  parentVariable : CstEv
 
   stl = {
     border: '1px solid green',
@@ -36,5 +37,6 @@ export class AppComponent {
 
   onChangeAlertState(st : CstEv) {
     console.log(`In AppComponent ${st}`)
+    this.parentVariable = st
   }
 }

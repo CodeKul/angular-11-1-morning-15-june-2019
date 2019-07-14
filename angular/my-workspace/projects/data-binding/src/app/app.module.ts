@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CstAlComponent } from './cst-al/cst-al.component';
+import { BgAlComponent } from './bg-al/bg-al.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CstAlComponent
+    CstAlComponent,
+    BgAlComponent
   ],
   imports: [
     BrowserModule
