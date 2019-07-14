@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-sm *ngIf="isVs" [dt]="dtNow">
+        <div class="jumbotron">
+          Respond when Angular (re)sets data-bound input properties. The method receives a SimpleChanges object of current and previous property values.
+          Called before ngOnInit() and whenever one or more data-bound input properties change.
+        </div>
+      </app-sm>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <input type="button" class="btn btn-primary" value="Okay" (click)="isVs = !isVs">
+      <input type="button" class="btn btn-primary" value="Change Date" (click)="date()">
+    </div>
+  </div>
+</div>
