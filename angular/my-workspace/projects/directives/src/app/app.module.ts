@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ColoringDirective } from './coloring.directive';
+import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ColoringDirective
+    ColoringDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule
