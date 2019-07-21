@@ -12,8 +12,30 @@
     </div>
   </div>
   <div class="row">
-    <div appColoring class="col-md-12" [ngStyle]="{'height' : '130px'}">
+    <div [appColoring]="'yellow'" class="col-md-12" [ngStyle]="{'height' : '130px'}">
 
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <ul>
+        <li *ngFor="let mob of mobiles">{{mob?.company}} -> {{mob?.name}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row">
+      <div class="col-md-12">
+        <input type="text" *ngIf="false">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ng-template [ngIf]="true">
+        <input type="text">
+      </ng-template>
     </div>
   </div>
 </div>

@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'directives';
+
+  mobiles = [
+    { name: 'android', company: 'Google' },
+    { name: 'ios', company: 'Apple' },
+    { name: 'RIM', company: 'BB' },
+    { name: 'mango', company: 'Microsoft' },
+    { name: 'Tizen', company: 'Samsung' }
+  ]
 }

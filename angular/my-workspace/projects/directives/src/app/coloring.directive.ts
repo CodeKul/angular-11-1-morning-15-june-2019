@@ -1,10 +1,11 @@
-import { Directive, ElementRef, OnInit, Renderer2, HostBinding, HostListener } from '@angular/core';
+import { Directive, ElementRef, OnInit, Renderer2, HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appColoring]'
 })
 export class ColoringDirective implements OnInit {
 
+  @Input('appColoring')
   @HostBinding('style.background')
   bakCol : string
 
@@ -18,7 +19,7 @@ export class ColoringDirective implements OnInit {
 
     // this.rend.setStyle(this.elRf.nativeElement, 'background', 'yellow') //do
 
-    this.bakCol = 'red'
+   // this.bakCol = 'red'
   }
 
   @HostListener('mouseenter')
