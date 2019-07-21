@@ -1,0 +1,19 @@
+<div class="container" >
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <input type="text" [ngStyle]="{ 'border' : '1px solid red' }">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p [ngClass]="{ 'alert' : true, 'alert-info' : true }">
+          Angular directives are used to extend the power of the HTML by giving it new syntax. Each directive has a name — either one from the Angular predefined like ng-repeat , or a custom one which can be called anything. And each directive determines where it can be used: in an element , attribute , class or comment 
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div appColoring class="col-md-12" [ngStyle]="{'height' : '130px'}">
+
+    </div>
+  </div>
+</div>
