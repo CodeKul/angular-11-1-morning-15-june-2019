@@ -1,3 +1,5 @@
+import { ThreeService } from './three.service';
+import { TwoService } from './two.service';
 import { ProgressService } from './progress.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,6 +9,7 @@ import { DataService } from './data.service';
 import { SmComponent } from './sm/sm.component';
 import { PanelComponent } from './panel.component';
 import { ProgressComponent } from './progress.component';
+import { OneService } from './one.service';
 
 @NgModule({
   declarations: [
