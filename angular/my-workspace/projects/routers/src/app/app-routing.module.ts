@@ -5,7 +5,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'chat', component: ChatComponent }
+  { path: 'chat/:mob', component: ChatComponent },
+  { path: 'chat', redirectTo: 'chat/298573987' },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
