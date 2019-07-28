@@ -16,6 +16,11 @@ export class LoginComponent implements OnInit {
   }
 
   onBtn(mob: string) {
-    this.router.navigate(['chat', mob])
+    this.router.navigate(['chat', mob], {
+      queryParams: {
+        tm: Date.now(),
+        dt : 'sidafjksljf'
+      }
+    })
   }
 }

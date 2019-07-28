@@ -9,6 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 export class ChatComponent implements OnInit {
 
   mobNum: string
+  options = [
+    'wa', 'fb', 'g+', 'insta', 'sc', 'wc'
+  ]
   constructor(
     private actRt: ActivatedRoute
   ) { }
@@ -17,6 +20,10 @@ export class ChatComponent implements OnInit {
     this.actRt.params.subscribe(prm => {
       console.log(prm)
       this.mobNum = prm['mob']
+    })
+
+    this.actRt.queryParams.subscribe(prm => {
+      console.log(prm)
     })
   }
 }
