@@ -4,6 +4,7 @@ import { ChatComponent } from './chat/chat.component';
 import { LoginComponent } from './login/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginGuard } from './chat/login.guard';
 
 const chatRoutes = [
   { path: 'wa', component: WaComponent },
@@ -12,7 +13,7 @@ const chatRoutes = [
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'chat/:mob', component: ChatComponent, children : chatRoutes },
+  { path: 'chat/:mob', component: ChatComponent, children: chatRoutes, canActivate: [LoginGuard] },
   { path: 'chat', redirectTo: 'chat/298573987' },
   { path: '**', redirectTo: '' }
 ];
