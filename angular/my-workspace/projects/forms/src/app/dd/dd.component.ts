@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dd',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DdComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  prePop = {
+    usNm: 'aflkkjzdlkv',
+    pass: 'aodfjfj',
+    eml: 'alkfj@sasladkvkj.co'
   }
 
+  fg: FormGroup
+
+  constructor(
+    private fb: FormBuilder
+  ) { }
+
+  ngOnInit() {
+    this.fg = this.fb.group({
+      usNm: this.fb.control('', Validators.required),
+      email: this.fb.control('', Validators.compose([
+        Validators.required, Validators.email
+      ])),
+      pass: this.fb.control('', Validators.required)
+    })
+  }
+
+  onSub() {
+    console.log(`Submitted`)
+    console.log(this.fg)
+  }
 }

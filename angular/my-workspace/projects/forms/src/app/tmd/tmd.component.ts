@@ -8,10 +8,12 @@ import { NgForm } from '@angular/forms';
 })
 export class TmdComponent implements OnInit {
 
+  emRg = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])+"
+  
   prePop = {
-    usNm : 'android',
-    pass : 'java',
-    email : 'a@a.com'
+    usNm : '',
+    pass : '',
+    email : ''
   }
   constructor() { }
 

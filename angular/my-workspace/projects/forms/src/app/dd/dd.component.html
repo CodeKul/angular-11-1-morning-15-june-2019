@@ -1,4 +1,4 @@
-<form class="form-horizontal" action='' method="POST">
+<form class="form-horizontal" (ngSubmit)="onSub()" [formGroup]="fg">
     <fieldset>
         <div id="legend">
             <legend class="">Register Using Data Driven</legend>
@@ -7,8 +7,8 @@
             <!-- Username -->
             <label class="control-label" for="username">Username</label>
             <div class="controls">
-                <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
-                <p class="help-block">Username can contain any letters or numbers, without spaces</p>
+                <input type="text"  [formControlName]="'usNm'" placeholder="" class="input-xlarge">
+                <p class="help-block text-muted" *ngIf="!fg.controls.usNm.valid">Username can contain any letters or numbers, without spaces</p>
             </div>
         </div>
 
@@ -16,8 +16,9 @@
             <!-- E-mail -->
             <label class="control-label" for="email">E-mail</label>
             <div class="controls">
-                <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-                <p class="help-block">Please provide your E-mail</p>
+                <input type="text" [formControlName]="'email'" placeholder="" class="input-xlarge">
+                <p class="help-block text-muted">Please provide your E-mail</p>
+                <p class="help-block text-muted">Please Valid E-mail</p>
             </div>
         </div>
 
@@ -25,8 +26,8 @@
             <!-- Password-->
             <label class="control-label" for="password">Password</label>
             <div class="controls">
-                <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-                <p class="help-block">Password should be at least 4 characters</p>
+                <input type="password" [formControlName]="'pass'" placeholder="" class="input-xlarge">
+                <p class="help-block text-muted">Password should be at least 4 characters</p>
             </div>
         </div>
 
@@ -36,14 +37,14 @@
             <div class="controls">
                 <input type="password" id="password_confirm" name="password_confirm" placeholder=""
                     class="input-xlarge">
-                <p class="help-block">Please confirm password</p>
+                <p class="help-block text-muted">Please confirm password</p>
             </div>
         </div>
 
         <div class="control-group">
             <!-- Button -->
             <div class="controls">
-                <button class="btn btn-success">Register</button>
+                <input type="submit" class="btn btn-success" value="Okay">
             </div>
         </div>
     </fieldset>
