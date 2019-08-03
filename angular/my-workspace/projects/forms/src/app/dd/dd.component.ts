@@ -1,3 +1,4 @@
+import { MyValidator } from './my-val';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -22,7 +23,9 @@ export class DdComponent implements OnInit {
 
   ngOnInit() {
     this.fg = this.fb.group({
-      usNm: this.fb.control('', Validators.required),
+      usNm: this.fb.control('', Validators.compose([
+        Validators.required, MyValidator.isStartFromA
+      ])),
       email: this.fb.control('', Validators.compose([
         Validators.required, Validators.email
       ])),
