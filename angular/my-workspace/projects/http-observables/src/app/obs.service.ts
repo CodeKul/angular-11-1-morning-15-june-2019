@@ -13,7 +13,8 @@ export class ObsService {
       // sub function e.g for sending SMS
 
       for (let i = 0; i < 500; i++) {
-        //
+        // heavy execution
+        
         subscriber.next(i)
 
         if (i == 10) {
