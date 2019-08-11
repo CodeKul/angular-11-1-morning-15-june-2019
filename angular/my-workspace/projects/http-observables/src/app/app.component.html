@@ -23,6 +23,7 @@
         <div class="card-body">
           <h5 class="card-title">{{obj?.first_name}} {{obj?.last_name}}</h5>
           <a href="#" class="btn btn-primary">{{obj?.email}}</a>
+          <p> {{obj | json}} </p>
         </div>
       </span>
     </div>
@@ -36,6 +37,14 @@
       </form>
       <p class="alert alert-success" *ngIf="isUsSuc"> User Saved Successfully </p>
       <p class="alert alert-error" *ngIf="isErr"> Error In creating usser </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <p> Per Request Price is {{cnt | currency}} </p>
+      <p> Uppercase {{title | uppercase}} </p>
+      <p> Chaining {{title | uppercase | slice:0:5}} </p>
+      <p> Custom Reverse {{title | reverse}} </p>
     </div>
   </div>
 </div>
