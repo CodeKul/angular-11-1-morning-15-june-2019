@@ -10,4 +10,32 @@
       <input type="button" value="Okay">
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <input type="button" value="List Users" class="btn btn-info" (click)="onListUsers()">
+      <input type="button" value="Single User" class="btn btn-info">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <span class="card" style="width: 18rem;" *ngFor="let obj of listUsrRes?.data">
+        <img [src]="obj?.avatar" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{obj?.first_name}} {{obj?.last_name}}</h5>
+          <a href="#" class="btn btn-primary">{{obj?.email}}</a>
+        </div>
+      </span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form #frm="ngForm" (ngSubmit)="onCreateUser(frm.value)">
+        <input name="userName" type="text" placeholder="User Name" ngModel>
+        <input name="password" type="password" placeholder="Password" ngModel>
+        <input type="submit" value="Create" class="btn btn-info">
+      </form>
+      <p class="alert alert-success" *ngIf="isUsSuc"> User Saved Successfully </p>
+      <p class="alert alert-error" *ngIf="isErr"> Error In creating usser </p>
+    </div>
+  </div>
 </div>
